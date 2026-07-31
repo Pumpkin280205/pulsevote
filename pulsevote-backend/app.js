@@ -24,7 +24,7 @@ app.use(helmet({
   crossOriginResourcePolicy: { policy: "cross-origin" }
 }));
 app.use(cors({
-  origin: 'https://localhost:5173',
+  origin: ['https://localhost:5173', 'https://localhost:5174', 'https://localhost:5175', 'https://localhost:5176'],
   credentials: true,
 }));
 

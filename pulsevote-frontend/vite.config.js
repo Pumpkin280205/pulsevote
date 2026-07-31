@@ -8,6 +8,13 @@ export default defineConfig({
     https: {
       key: fs.readFileSync('ssl/key.pem'),
       cert: fs.readFileSync('ssl/cert.pem'),
-    }
-  }
+    },
+    proxy: {
+      '/api': {
+        target: 'https://localhost:5000',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
+  },
 });
