@@ -5,9 +5,30 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pulsevote-frontend</title>
+
+    <!-- CSP VIOLATION: Inline style from unauthorized source -->
+    <style>
+      body { font-family: 'Comic Sans MS', cursive; }
+      .csp-test { color: red; }
+    </style>
+
+    <!-- CSP VIOLATION: External font from unauthorized source -->
+    <link href="https://unauthorized-fonts.example.com/fonts.css" rel="stylesheet">
+
+    <!-- CSP VIOLATION: External image from unauthorized source -->
+    <link rel="preload" as="image" href="https://external-images.example.com/tracking.png">
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- CSP VIOLATION: Inline script (not allowed by scriptSrc) -->
+    <script>
+      console.log('This inline script should be blocked by CSP');
+      document.body.innerHTML += '<div class="csp-test">CSP Violation: Inline script executed!</div>';
+    </script>
+
+    <!-- CSP VIOLATION: External script from unauthorized source -->
+    <script src="https://malicious-scripts.example.com/steal-data.js"></script>
   </body>
 </html>
