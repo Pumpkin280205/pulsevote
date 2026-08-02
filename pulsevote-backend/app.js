@@ -21,7 +21,17 @@ app.use((req, res, next) => {
 
 // ✅ CORS and security (after body parser)
 app.use(helmet({
-  crossOriginResourcePolicy: { policy: "cross-origin" }
+  crossOriginResourcePolicy: { policy: "cross-origin" },
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "https://apis.google.com"],
+      styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+      fontSrc: ["'self'", "https://fonts.gstatic.com"],
+      imgSrc: ["'self'", "data:"],
+      connectSrc: ["'self'", "http://localhost:5000"],
+    },
+  },
 }));
 app.use(cors({
   origin: ['https://localhost:5173', 'https://localhost:5174', 'https://localhost:5175', 'https://localhost:5176'],
