@@ -40,10 +40,14 @@ app.use(cors({
 
 // ✅ Routes
 const authRoutes = require('./routes/authRoutes');
+const organisationRoutes = require('./routes/organisationRoutes');
+const pollRoutes = require('./routes/pollRoutes');
 const { protect } = require('./middleware/authMiddleware');
 
 // Mount auth routes
 app.use('/api/auth', authRoutes);
+app.use('/api/organisations', organisationRoutes);
+app.use('/api/polls', pollRoutes);
 
 // Test routes
 app.get('/test', (req, res) => {
