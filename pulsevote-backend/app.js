@@ -7,11 +7,11 @@ dotenv.config();
 
 const app = express();
 
-// ✅ CRITICAL: Body parser MUST be first
+// ��� � � ✅ CRITICAL: Body parser MUST be first
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// ✅ Logging middleware to debug
+// ��� � � ✅ Logging middleware to debug
 app.use((req, res, next) => {
   console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
   console.log('Headers:', req.headers);
@@ -19,21 +19,31 @@ app.use((req, res, next) => {
   next();
 });
 
-// ✅ CORS and security (after body parser)
+// ��� � � ✅ CORS and security (after body parser)
 app.use(helmet({
-  crossOriginResourcePolicy: { policy: "cross-origin" }
+  crossOriginResourcePolicy: { policy: "cross-origin" },
+  contentSecurityPolicy: {
+    directives: {
+      defaultSrc: ["'self'"],
+      connectSrc: ["'self'", "https://localhost:5000"]
+    }
+  }
 }));
 app.use(cors({
   origin: ['https://localhost:5173', 'https://localhost:5174', 'https://localhost:5175', 'https://localhost:5176'],
   credentials: true,
 }));
 
-// ✅ Routes
+// ��� � � ✅ Routes
 const authRoutes = require('./routes/authRoutes');
+const organisationRoutes = require('./routes/organisationRoutes');
+const pollRoutes = require('./routes/pollRoutes');
 const { protect } = require('./middleware/authMiddleware');
 
 // Mount auth routes
 app.use('/api/auth', authRoutes);
+app.use('/api/organisations', organisationRoutes);
+app.use('/api/polls', pollRoutes);
 
 // Test routes
 app.get('/test', (req, res) => {
@@ -56,17 +66,17 @@ app.get('/api/protected', protect, (req, res) => {
   });
 });
 
-// ✅ 404 handler
+// ��� � � ✅ 404 handler
 app.use((req, res) => {
   console.log('404 - Route not found:', req.method, req.url);
-  res.status(404).json({ 
+  res.status(404).json({
     error: 'Route not found',
     method: req.method,
     url: req.url
   });
 });
 
-// ✅ Error handler
+// ��� � � ✅ Error handler
 app.use((err, req, res, next) => {
   console.error('Error:', err);
   res.status(500).json({ error: err.message });

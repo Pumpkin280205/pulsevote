@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
-const { register, login, logout } = require("../controllers/authController");
-const { protect } = require("../middleware/authMiddleware");
+const { registerUser, registerManager, registerAdmin, login } = require("../controllers/authController");
 
-// These routes will be at /api/auth/register, /api/auth/login, etc.
-router.post("/register", register);
+// These routes will be at /api/auth/register-user, /api/auth/login, etc.
+router.post("/register-user", registerUser);
+router.post("/register-manager", registerManager);
+router.post("/register-admin", registerAdmin);
 router.post("/login", login);
-router.post("/logout", logout);
 
 module.exports = router;

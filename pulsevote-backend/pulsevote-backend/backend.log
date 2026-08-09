@@ -1,0 +1,281 @@
+
+> pulsevote-backend@1.0.0 dev
+> nodemon server.js
+
+[33m[nodemon] 3.1.14[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node server.js`[39m
+◇ injected env (3) from .env // tip: ⌘ override existing { override: true }
+Loading organisationRoutes
+◇ injected env (0) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+✅ MongoDB connected
+✅ Server running at https://localhost:5000
+
+📋 Available endpoints:
+  GET  https://localhost:5000/test
+  GET  https://localhost:5000/api/test
+  POST https://localhost:5000/api/auth/register
+  POST https://localhost:5000/api/auth/login
+  POST https://localhost:5000/api/auth/logout
+  GET  https://localhost:5000/api/auth/protected (requires token)
+
+[2026-08-07T08:54:21.529Z] POST /api/auth/register-user
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  'content-type': 'application/json',
+  'content-length': '49'
+}
+Body: { email: 'user@example.com', password: 'user123' }
+[2026-08-07T08:54:31.981Z] GET /api/organisations/my-organisations
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  authorization: 'Bearer e[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+◇ injected env (3) from .env // tip: ⌘ suppress logs { quiet: true }
+Loading organisationRoutes
+◇ injected env (0) from .env // tip: ⌘ enable debugging { debug: true }
+✅ MongoDB connected
+node:events:487
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:2167:16)
+    at listenInCluster (node:net:2224:12)
+    at Server.listen (node:net:2344:7)
+    at D:\Users\Anjor\Desktop\pulsevote\pulsevote-backend\server.js:17:36
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:2203:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 5000
+}
+
+Node.js v26.5.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `node server.js`[39m
+◇ injected env (3) from .env // tip: ⌘ multiple files { path: ['.env.local', '.env'] }
+Loading organisationRoutes
+◇ injected env (0) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+✅ MongoDB connected
+node:events:487
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE: address already in use :::5000
+    at Server.setupListenHandle [as _listen2] (node:net:2167:16)
+    at listenInCluster (node:net:2224:12)
+    at Server.listen (node:net:2344:7)
+    at D:\Users\Anjor\Desktop\pulsevote\pulsevote-backend\server.js:17:36
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:2203:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -4091,
+  syscall: 'listen',
+  address: '::',
+  port: 5000
+}
+
+Node.js v26.5.0
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+/8.21.0',
+  accept: '*/*',
+  'content-type': 'application/json',
+  'content-length': '49'
+}
+Body: { email: 'user@example.com', password: 'user123' }
+[2026-08-07T09:02:35.046Z] POST /api/auth/login
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  'content-type': 'application/json',
+  'content-length': '49'
+}
+Body: { email: 'user@example.com', password: 'user123' }
+[2026-08-07T09:05:57.384Z] POST /api/auth/login
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  'content-type': 'application/json',
+  'content-length': '49'
+}
+Body: { email: 'user@example.com', password: 'user123' }
+[2026-08-07T09:06:52.226Z] POST /api/auth/login
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  'content-type': 'application/json',
+  'content-length': '49'
+}
+Body: { email: 'user@example.com', password: 'user123' }
+[32m[nodemon] restarting due to changes...[39m
+[2026-08-07T09:07:15.167Z] POST /api/auth/login
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  'content-type': 'application/json',
+  'content-length': '49'
+}
+Body: { email: 'user@example.com', password: 'user123' }
+[2026-08-07T09:08:15.068Z] POST /api/auth/login
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  'content-type': 'application/json',
+  'content-length': '49'
+}
+Body: { email: 'user@example.com', password: 'user123' }
+[32m[nodemon] restarting due to changes...[39m
+[2026-08-07T09:08:31.573Z] GET /api/organisations/my-organisations
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  authorization: 'Bearer'
+}
+Body: undefined
+[2026-08-07T09:09:07.616Z] GET /api/organisations/my-organisations
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  authorization: 'Bearer'
+}
+Body: undefined
+[2026-08-07T09:10:54.151Z] POST /api/auth/login
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  'content-type': 'application/json',
+  'content-length': '49'
+}
+Body: { email: 'user@example.com', password: 'user123' }
+[2026-08-07T09:11:07.107Z] GET /api/organisations/my-organisations
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  authorization: 'Bearer'
+}
+Body: undefined
+[2026-08-07T09:11:27.523Z] GET /api/organisations/my-organisations
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  authorization: 'Bearer'
+}
+Body: undefined
+[2026-08-07T09:11:42.876Z] GET /api/organisations/my-organisations
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  authorization: 'Bearer'
+}
+Body: undefined
+[2026-08-07T09:12:03.212Z] GET /api/organisations/my-organisations
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzU5ZDNkYWZmN2FkNTNlYWI2MTU5MyIsImVtYWlsIjoidXNlckBleGFtcGxlLmNvbSIsInJvbGVzIjpbeyJvcmdhbmlzYXRpb25JZCI6bnVsbCwicm9sZSI6InVzZXIiLCJfaWQiOiI2YTc1OWQzZGFmZmFkNTNlZWI2MTU5NCJ9LCJpYXQiOjE3ODYwOTM2OTUsImV4cCI6MTc4NjA5NzIzNX0.NRW_TaK268LrG0rk9Piq7PAkpq5y_UBzlmm1zwbKmHI'
+}
+Body: undefined
+[2026-08-07T09:17:49.660Z] POST /api/auth/login
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  'content-type': 'application/json',
+  'content-length': '49'
+}
+Body: { email: 'user@example.com', password: 'user123' }
+[2026-08-07T09:18:54.143Z] POST /api/auth/login
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  'content-type': 'application/json',
+  'content-length': '49'
+}
+Body: { email: 'user@example.com', password: 'user123' }
+[2026-08-07T09:19:50.309Z] GET /api/organisations/my-organisations
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  authorization: 'Bearer'
+}
+Body: undefined
+[2026-08-07T09:20:22.822Z] GET /api/organisations/my-organisations
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  authorization: 'Bearer'
+}
+Body: undefined
+[2026-08-07T09:21:05.993Z] POST /api/auth/login
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  'content-type': 'application/json',
+  'content-length': '49'
+}
+Body: { email: 'user@example.com', password: 'user123' }
+[2026-08-07T09:21:06.182Z] GET /api/organisations/my-organisations
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhNzU5ZDNkYWZmN2FkNTNlYWI2MTU5MyIsImVtYWlsIjoidXNlckBleGFtcGxlLmNvbSIsInJvbGVzIjpbeyJvcmdhbmlzYXRpb25JZCI6bnVsbCwicm9sZSI6InVzZXIiLCJfaWQiOiI2YTc1OWQzZGFmZjdhZDUzZWFiNjE1OTQifV0sImlhdCI6MTc4NjA5NDQ2NiwiZXhwIjoxNzg2MDk4MDY2fQ.plAprWask3T0ezqcwx5egrJVf1Qf-Ilaoe5ilZ5rM80'
+}
+Body: undefined
+getMyOrganisations called
+user found: {
+  _id: new ObjectId('6a759d3daff7ad53eab61593'),
+  email: 'user@example.com',
+  password: '$2b$10$aeZtPdtk/V4kz3uCAU7hreEWECjOYrp1vQUZ6/2srOZBaBtwDjsMG',
+  roles: [
+    {
+      organisationId: null,
+      role: 'user',
+      _id: new ObjectId('6a759d3daff7ad53eab61594')
+    }
+  ],
+  createdAt: 2026-08-07T08:54:21.545Z,
+  updatedAt: 2026-08-07T08:54:21.545Z,
+  __v: 0
+}
+isAdmin: false organisationIds: []
+[2026-08-07T09:21:30.242Z] GET /api/organisations/my-organisations
+Headers: {
+  host: 'localhost:5000',
+  'user-agent': 'curl/8.21.0',
+  accept: '*/*',
+  authorization: 'Bearer',
+  connection: 'close'
+}
+Body: undefined
+[32m[nodemon] starting `node server.js`[39m
