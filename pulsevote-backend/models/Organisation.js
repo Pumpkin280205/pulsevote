@@ -1,36 +1,16 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
+const crypto = require("crypto");
 
 const organisationSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    unique: true,
-    trim: true
-  },
-  createdBy: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
-  },
-  members: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'
-  }],
-  joinCode: {
-    type: String
-  }
-}, {
-  timestamps: true
+  name: { type: String, required: true, unique: true },
+  joinCode: { type: String, unique: true },
+  createdBy: { type: mongoose.Schema.Types.ObjectId, ref: "User", required: true },
+  members: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }]
 });
 
-organisationSchema.methods.generateJoinCode = function() {
-  // Generate a random 6-character uppercase code
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  let result = '';
-  for (let i = 0; i < 6; i++) {
-    result += characters.charAt(Math.floor(Math.random() * characters.length));
-  }
-  this.joinCode = result;
+organisationSchema.methods.generateJoinCode = function () {
+  this.joinCode = crypto.randomBytes(4).toString("hex");
+  return this.joinCode;
 };
 
-module.exports = mongoose.model('Organisation', organisationSchema);
+module.exports = mongoose.model("Organisation", organisationSchema);

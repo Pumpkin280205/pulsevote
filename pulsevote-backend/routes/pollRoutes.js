@@ -16,7 +16,7 @@ router.post("/create-poll", protect, requireRole("manager"), createPoll);
 router.post("/vote/:pollId", protect, requireRole("user"), votePoll);
 router.get("/get-poll-results/:pollId", protect, getPollResults);
 router.get("/get-polls/:organisationId", protect, getOrgPolls);
-router.post("/close/:pollId", protect, closePoll);
-router.post("/open/:pollId", protect, openPoll);
+router.post("/close/:pollId", protect, requireRole("manager"), closePoll);
+router.post("/open/:pollId", protect, requireRole("manager"), openPoll);
 
 module.exports = router;
