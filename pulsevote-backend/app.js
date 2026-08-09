@@ -9,6 +9,7 @@ const app = express();
 
 // ✅ CRITICAL: Body parser MUST be first
 app.use(express.json());
+
 app.use(express.urlencoded({ extended: true }));
 
 // ✅ Logging middleware to debug
